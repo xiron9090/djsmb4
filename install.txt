@@ -1,4 +1,10 @@
 Deps:
 apt install python3-tz python3-ldap3 python3-setuptools python-sqlite python3-wheel python3-pip
 
+Django:
+pip3 install Django==2.1.4
+
+Notes:
+https://www.howtoforge.com/tutorial/how-to-install-django-on-ubuntu/
+
 TODO: Rest-API
