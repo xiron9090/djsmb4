@@ -1,1 +1,4 @@
-apt install python3-tz python3-ldap3 python3-setuptools python-sqlite python3-wheel python3-pip 
+Deps:
+apt install python3-tz python3-ldap3 python3-setuptools python-sqlite python3-wheel python3-pip
+
+TODO: Rest-API
