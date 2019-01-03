@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Connect externally via ldap3 Python3 module parsing 
+Connect externally via ldap3 Python3 module parsing
 config.ini config file
 """
 

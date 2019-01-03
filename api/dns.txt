@@ -1,0 +1,58 @@
+Samba-tool dns
+
+    kinit
+
+kinit administrator@SIMPLEX.LOCAL
+
+    Creating a new zone (forward)
+
+samba-tool dns zonecreate localhost 244.168.192.in-addr.arpa
+
+    Creating a new zone (reverse)
+
+samba-tool dns zonecreate localhost willux.org
+
+    A RECORD add
+
+samba-tool dns add localhost  simplex.local  otto A 192.168.246.23
+
+    A RECORD delete
+
+samba-tool dns delete localhost  simplex.local  otto A 192.168.246.23
+
+    CNAME RECORD add
+
+samba-tool dns add localhost  simplex.local  karl CNAME otto.simplex.local 
+
+    PTR RECORD add
+
+samba-tool dns add localhost  246.168.192.in-addr.arpa  23  PTR  otto.simplex.local 
+
+    CNAME RECORD delete
+
+samba-tool dns delete localhost  simplex.local  karl CNAME otto.simplex.local
+
+    NS RECORD add
+
+samba-tool dns add localhost  246.168.192.in-addr.arpa @ NS  sux.simplex.local
+
+    MX RECORD add
+
+samba-tool dns add localhost simlex.local @ MX  "otto.simplex.local 10"
+
+    SERVER INFO
+
+samba-tool dns serverinfo localhost
+
+    ZONE INFO
+
+samba-tool dns zoneinfo localhost simplex.local
+
+    ZONE LIST
+
+samba-tool dns zonelist localhost 
+
+    Print all DNS records 
+
+samba-tool dns query localhost simplex.local @ ALL
+
