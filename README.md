@@ -1,6 +1,6 @@
 djsmb4
 --
-Django2/Python3 web interface for Samba4 ADDC admin[WiP]
+Django2/Python3 web interface for Samba4 ADDC administration[WiP]
 
 Based on:
 http://admlinux.cubava.cu/2018/02/27/pdc-con-samba-4-dlz-en-debian-9/
