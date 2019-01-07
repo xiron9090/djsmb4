@@ -5,14 +5,15 @@ from django.shortcuts import render
 # Create your views here.
 
 def home(request):
-	ctx = {}
+	title = "::: Login to Admin Site :::"
+	ctx = {"title":title}
 	return render(request, "login/login.html", ctx)
 
 #@login_required
-def admin_view(request):
-	title = "Admin page"
+def main_view(request):
+	title = ".::: Admin page:::. "
 	ctx = {"title": title}
-	return render(request,'admin/admin.html', ctx)
+	return render(request,'admin/dashboard.html', ctx)
 
 #Logout
 #@login_required

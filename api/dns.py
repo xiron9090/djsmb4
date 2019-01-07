@@ -8,22 +8,68 @@ config = ConfigParser()
 config.read('config.ini')
 
 # Settings from server
-server = config.get('Server', 'host')
-user = config.get('Server', 'user')
-passw = config.get('Server', 'passwd')
+ADDC = config.get('Server', 'addc')
+SRVR = config.get('Server', 'host')
+USER = config.get('Server', 'user')
+PASSWD = config.get('Server', 'passwd')
 
-def zone_create(zone):
-	query_direct = "samba-tool dns zonecreate localhost 1.10.10.in-addr.arpa -U 'user'%'passw'"
-	query_reverse = "samba-tool dns add localhost 1.10.10.in-addr.arpa 4 PTR zone. -U 'administrator'%'Admin*123'"
+def dns_info():
+	# samba-tool dns serverinfo localhost -U 'USER'%'PASSWD'
+	pass
+
+def zone_info():
+	# samba-tool dns zoneinfo SRVR ADDC -U 'USER'%'PASSWD'
+	pass
+
+def zone_list():
+	# samba-tool dns zonelist localhost -U 'USER'%'PASSWD'
+	pass
 
 def entry_list():
-    result = cmd("samba-tool group list")
-    print(result)
+	addc = config.get('Server', 'addc')
+	result = cmd("samba-tool dns query localhost addc @ ALL -U 'USER'%'PASSWD'")
+	print(result)
 
-def entry_update(groupname):
-    result = cmd("samba-tool group delete '%s'" % (groupname))
-    return result
+def zone_create(zone):
+	ip = server.split('.')
+	query_direct = "samba-tool dns zonecreate localhost ip[2].ip[1].ip[0].in-addr.arpa -U 'USER'%'PASSWD'"
+	query_reverse = "samba-tool dns add localhost ip[2].ip[1].ip[0].in-addr.arpa ip[3] PTR zone. -U 'USER'%'PASSWD'"
 
-def entry_delete(groupname):
-    result = cmd("samba-tool group delete '%s'" % (groupname))
-    return result
+#def entry_add():
+#    result = cmd("samba-tool dns add localhost ADDC pepe A 10.10.1.101 -U 'USER'%'PASSWD')
+#    return result
+
+#def entry_delete():
+#    result = cmd("samba-tool dns delete localhost ADDC pepe A 10.10.1.101 -U 'USER'%'PASSWD')
+#    return result
+
+#PTR
+def add_ptr():
+	pass
+
+def del_ptr():
+	pass
+
+#CNAME
+def add_cname():
+	pass
+
+def del_cname():
+	pass
+
+# NS
+def add_ns():
+	pass
+
+def del_ns():
+	pass
+
+#MX
+def add_mx():
+	pass
+
+def del_mx():
+	pass
+
+
+
