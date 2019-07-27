@@ -1,9 +1,3 @@
-Samba-tool dns
-
-    kinit
-
-kinit administrator@SIMPLEX.LOCAL
-
     Creating a new zone (forward)
 
 samba-tool dns zonecreate localhost 244.168.192.in-addr.arpa
@@ -39,20 +33,3 @@ samba-tool dns add localhost  246.168.192.in-addr.arpa @ NS  sux.simplex.local
     MX RECORD add
 
 samba-tool dns add localhost simlex.local @ MX  "otto.simplex.local 10"
-
-    SERVER INFO
-
-samba-tool dns serverinfo localhost
-
-    ZONE INFO
-
-samba-tool dns zoneinfo localhost simplex.local
-
-    ZONE LIST
-
-samba-tool dns zonelist localhost 
-
-    Print all DNS records 
-
-samba-tool dns query localhost simplex.local @ ALL
-

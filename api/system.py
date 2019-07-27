@@ -17,9 +17,6 @@ def actual_release():
 	return release 
 
 def cmd(shell_command):
-    """
-    Function to execute shell commands
-    """
     status, output = commands.getstatusoutput(shell_command)
     if status == 0:
         return output.splitlines()
